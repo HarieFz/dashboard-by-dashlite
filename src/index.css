@@ -1,0 +1,14 @@
+@import "../src/assets/css/font.css";
+
+@import "tailwindcss";
+
+@theme {
+  --font-source-sans-pro: Source Sans Pro, "sans-serif";
+
+  --max-width-8xl: 90rem;
+  --max-width-9xl: 100rem;
+}
+
+.btn {
+  @apply cursor-pointer transition-colors bg-[#F6F6F6] hover:bg-[#EAEAEA] rounded-[3px] px-2.5 py-1.75 tracking-[0.02em] text-[#989898] hover:text-[#484848];
+}

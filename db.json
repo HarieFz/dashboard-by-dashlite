@@ -1,0 +1,88 @@
+{
+  "dashboard-stats": [
+    {
+      "title": "TOTAL EARNINGS",
+      "value": "$9,000",
+      "type": "money",
+      "change": {
+        "percent": "+63%",
+        "trend": "up"
+      },
+      "description": "Net earnings",
+      "icon": "currency-usd"
+    },
+    {
+      "title": "ORDERS",
+      "value": "22,220",
+      "type": "count",
+      "change": {
+        "percent": "-44%",
+        "trend": "down"
+      },
+      "description": "View all orders",
+      "icon": "cart"
+    },
+    {
+      "title": "CUSTOMERS",
+      "value": "12,222",
+      "type": "count",
+      "change": {
+        "percent": "+63%",
+        "trend": "up"
+      },
+      "description": "View Customers",
+      "icon": "account-outline"
+    },
+    {
+      "title": "BALANCE",
+      "value": "$9,000",
+      "type": "money",
+      "change": {
+        "percent": "+0%",
+        "trend": "neutral"
+      },
+      "description": "Withdraw",
+      "icon": "wallet-bifold"
+    }
+  ],
+  "revenue-stats": [
+    {
+      "title": "ORDERS",
+      "value": "8,001"
+    },
+    {
+      "title": "EARNINGS",
+      "value": "$6,111"
+    },
+    {
+      "title": "REFUNDS",
+      "value": "$9,000"
+    },
+    {
+      "title": "CONVERTION RATE",
+      "value": "21%"
+    }
+  ],
+  "revenue-chart": [
+    { "month": "Jan", "category1": 160, "category2": 140, "category3": 300 },
+    { "month": "Feb", "category1": 130, "category2": 140, "category3": 320 },
+    { "month": "Mar", "category1": 200, "category2": 160, "category3": 380 },
+    { "month": "Apr", "category1": 120, "category2": 130, "category3": 240 },
+    { "month": "May", "category1": 135, "category2": 140, "category3": 350 },
+    { "month": "Jun", "category1": 60, "category2": 120, "category3": 200 },
+    { "month": "Jul", "category1": 125, "category2": 135, "category3": 250 },
+    { "month": "Aug", "category1": 110, "category2": 120, "category3": 200 },
+    { "month": "Sep", "category1": 125, "category2": 130, "category3": 340 },
+    { "month": "Oct", "category1": 75, "category2": 125, "category3": 280 },
+    { "month": "Nov", "category1": 150, "category2": 190, "category3": 370 },
+    { "month": "Dec", "category1": 180, "category2": 130, "category3": 400 }
+  ],
+  "discount-product-sales-chart": [
+    { "month": "Jan", "category1": 170 },
+    { "month": "Feb", "category1": 150 },
+    { "month": "Mar", "category1": 200 },
+    { "month": "Apr", "category1": 180 },
+    { "month": "May", "category1": 170 },
+    { "month": "Jun", "category1": 210 }
+  ]
+}
