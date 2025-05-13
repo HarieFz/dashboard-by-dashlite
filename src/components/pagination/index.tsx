@@ -37,7 +37,7 @@ export default function Pagination({ pageCount, currentPage, onPageChange }: Pag
           activeLinkClassName="!text-[#484848]"
           previousLinkClassName="block flex items-center justify-center desktop:w-6 desktop:h-6 laptop:w-4.25 laptop:h-4.25"
           nextLinkClassName="block flex items-center justify-center desktop:w-6 desktop:h-6 laptop:w-4.25 laptop:h-4.25"
-          breakLinkClassName="block desktop:px-3.25 laptop:px-3.25 desktop:py-1.75 laptop:py-1.25 text-[#989898] cursor-pointer"
+          breakLinkClassName="block text-[#989898] cursor-pointer"
           // disabled
           disabledClassName="!text-[#989898] !cursor-not-allowed"
         />

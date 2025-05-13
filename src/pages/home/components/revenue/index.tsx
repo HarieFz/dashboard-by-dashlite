@@ -1,53 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Area, AreaChart, ReferenceArea, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { RevenueStatData } from "../../../../types/revenue-stats";
+import { REVENUE_CHART, REVENUE_STATS } from "../../../../constants";
 
 type TimeRangesTypes = "ALL" | "1W" | "1M" | "6M" | "1Y";
 
 export default function Revenue() {
-  const [stats, setStats] = useState<RevenueStatData[]>([]);
-  const [chart, setChart] = useState<RevenueStatData[]>([]);
+  const stats = REVENUE_STATS;
+  const chart = REVENUE_CHART;
   const [filterTimeRanges, setFilterTimeRanges] = useState<TimeRangesTypes>("ALL");
-
-  const getStats = () => {
-    const requestOptions: RequestInit = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch("http://localhost:3030/revenue-stats", requestOptions)
-      .then((response) => response.json())
-      .then((result) => setStats(result))
-      .catch((error) => console.log("error", error));
-  };
-
-  useEffect(() => {
-    getStats();
-  }, []);
-
-  const getChart = () => {
-    const requestOptions: RequestInit = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch("http://localhost:3030/revenue-chart", requestOptions)
-      .then((response) => response.json())
-      .then((result) => setChart(result))
-      .catch((error) => console.log("error", error));
-  };
-
-  useEffect(() => {
-    getChart();
-  }, []);
 
   const getBtnBg = (current: string, selected: TimeRangesTypes) =>
     current === selected && "!bg-[#EAEAEA] !text-[#484848]";
 
   return (
-    <section className="bg-white px-6.25 pt-5.5 pb-14 border border-[#EBEBEB] rounded-md mb-5">
+    <section className="bg-white desktop:px-6.25 desktop:pt-5.5 desktop:pb-14 laptop:px-4.5 laptop:pt-4 laptop:pb-10 border border-[#EBEBEB] rounded-md mb-5">
       <div className="flex justify-between mb-7">
-        <h1 className="font-semibold text-[27px] text-[#484848]">Revenue</h1>
+        <h1 className="font-semibold desktop:text-[27px] laptop:text-xl text-[#484848]">Revenue</h1>
         <div className="flex items-center gap-2.5">
           <button
             className={`btn tracking-[0.09em] ${getBtnBg(filterTimeRanges, "ALL")}`}
@@ -84,15 +52,15 @@ export default function Revenue() {
 
       <div className="grid grid-cols-4 gap-5 mb-8.25">
         {stats.map((item) => (
-          <div key={item.id} className="bg-[#FDFDFD] border border-[#EBEBEB] rounded-md p-6.25">
-            <p className="tracking-[0.09em] text-[#989898]">{item.title}</p>
-            <p className="text-4xl tracking-[0.02em] text-[#484848]">{item.value}</p>
+          <div key={item.id} className="bg-[#FDFDFD] border border-[#EBEBEB] rounded-md desktop:p-6.25 laptop:p-4.5">
+            <p className="desktop:text-base laptop:text-xs tracking-[0.09em] text-[#989898]">{item.title}</p>
+            <p className="desktop:text-4xl laptop:text-2xl tracking-[0.02em] text-[#484848]">{item.value}</p>
           </div>
         ))}
       </div>
 
-      <div className="h-[355px]">
-        <ResponsiveContainer width="100%" height={355}>
+      <div className="desktop:h-[355px] laptop:h-[252px] desktop:text-base laptop:text-xs">
+        <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={chart} margin={{ top: 0, right: 0, left: 0, bottom: 5 }}>
             <XAxis dataKey="month" axisLine={false} tickLine={false} tickMargin={13} />
             <YAxis axisLine={false} tickLine={false} domain={[0, 800]} tickMargin={18} />

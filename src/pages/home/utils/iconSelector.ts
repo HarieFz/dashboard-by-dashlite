@@ -2,7 +2,6 @@ import AccountOutline from "../../../assets/icons/account-outline.svg?react";
 import Cart from "../../../assets/icons/cart.svg?react";
 import CurrencyUSD from "../../../assets/icons/currency-usd.svg?react";
 import WalletBifold from "../../../assets/icons/wallet-bifold.svg?react";
-import { IconType } from "../../../types/dashboard-stats";
 
 export const iconSelector = (icon: IconType) => {
   switch (icon) {

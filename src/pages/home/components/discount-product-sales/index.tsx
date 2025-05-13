@@ -1,35 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Area, AreaChart, ReferenceArea, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { DISCOUNT_PRODUCT_SALES_CHART } from "../../../../constants";
 
 type TimeRangesTypes = "1W" | "1M" | "6M";
 
 export default function DiscountProductSales() {
   const [filterTimeRanges, setFilterTimeRanges] = useState<TimeRangesTypes>("6M");
-  const [chart, setChart] = useState<{ month: string; category1: number }[]>([]);
+  const chart = DISCOUNT_PRODUCT_SALES_CHART;
 
   const getBtnBg = (current: string, selected: TimeRangesTypes) =>
     current === selected && "!bg-[#EAEAEA] !text-[#484848]";
 
-  const getChart = () => {
-    const requestOptions: RequestInit = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch("http://localhost:3030/discount-product-sales-chart", requestOptions)
-      .then((response) => response.json())
-      .then((result) => setChart(result))
-      .catch((error) => console.log("error", error));
-  };
-
-  useEffect(() => {
-    getChart();
-  }, []);
-
   return (
-    <div className="col-span-5 bg-white ps-6.25 pe-5 pt-5.5 pb-4.5 border border-[#EBEBEB] rounded-md mb-5">
+    <div className="col-span-5 bg-white desktop:ps-6.25 desktop:pe-5 desktop:pt-5.5 desktop:pb-4.5 laptop:ps-4.5 laptop:pe-3.5 laptop:pt-4 laptop:pb-3.25 border border-[#EBEBEB] rounded-md mb-5">
       <div className="flex justify-between mb-6">
-        <h1 className="font-semibold text-[27px] text-[#484848]">Discount Product Sales</h1>
+        <h1 className="font-semibold desktop:text-[27px] laptop:text-xl text-[#484848]">Discount Product Sales</h1>
         <div className="flex items-center gap-2.5">
           <button
             className={`btn tracking-[0.09em] ${getBtnBg(filterTimeRanges, "1W")}`}
@@ -53,15 +38,15 @@ export default function DiscountProductSales() {
       </div>
 
       <div className="mb-5">
-        <p className="tracking-[0.09em] text-[#989898]">Total sales</p>
+        <p className="tracking-[0.09em] desktop:text-base laptop:text-xs text-[#989898]">Total sales</p>
         <div className="flex items-center gap-1.25">
-          <p className="text-4xl tracking-[0.02em] text-[#484848]">$8,001</p>
-          <p className="font-semibold text-[22px] tracking-[0.02em] text-[#88B267]">+63 %</p>
+          <p className="desktop:text-4xl laptop:text-2xl tracking-[0.02em] text-[#484848]">$8,001</p>
+          <p className="font-semibold desktop:text-[22px] laptop:text-base tracking-[0.02em] text-[#88B267]">+63 %</p>
         </div>
       </div>
 
-      <div className="h-[355px]">
-        <ResponsiveContainer width="100%" height={355}>
+      <div className="desktop:h-[355px] laptop:h-[252px] desktop:text-base laptop:text-xs">
+        <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={chart} margin={{ top: 0, right: 0, left: 0, bottom: 5 }}>
             <XAxis dataKey="month" axisLine={false} tickLine={false} tickMargin={13} />
             <YAxis axisLine={false} tickLine={false} tickMargin={18} />

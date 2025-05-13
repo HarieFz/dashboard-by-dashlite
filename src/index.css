@@ -14,5 +14,5 @@
 }
 
 .btn {
-  @apply cursor-pointer transition-colors bg-[#F6F6F6] hover:bg-[#EAEAEA] rounded-[3px] px-2.5 py-1.75 text-base lg:text-sm tracking-[0.02em] text-[#989898] hover:text-[#484848];
+  @apply cursor-pointer transition-colors bg-[#F6F6F6] hover:bg-[#EAEAEA] rounded-[3px] px-2.5 py-1.75 desktop:text-base laptop:text-xs tracking-[0.02em] text-[#989898] hover:text-[#484848];
 }

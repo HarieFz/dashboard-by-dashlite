@@ -49,9 +49,9 @@ function SalesByLocation() {
   ];
 
   return (
-    <div className="col-span-2 bg-white px-6.25 pt-6.25 pb-14 border border-[#EBEBEB] rounded-md">
+    <div className="col-span-2 bg-white desktop:px-6.25 laptop:px-4.5 desktop:pt-6.25 laptop:pt-4.5 desktop:pb-14 laptop:pb-10 border border-[#EBEBEB] rounded-md">
       <div className="flex items-center justify-between mb-6.25">
-        <h1 className="font-semibold text-[27px] text-[#484848]">Sales By Location</h1>
+        <h1 className="font-semibold desktop:text-[27px] laptop:text-xl text-[#484848]">Sales By Location</h1>
         <button className="btn">Export report</button>
       </div>
 
@@ -59,8 +59,8 @@ function SalesByLocation() {
         {salesByLocation.map((item, index) => (
           <div key={index}>
             <div className="flex items-center justify-between mb-2">
-              <p className="text-xl tracking-[0.02em] text-[#484848]">{item.location}</p>
-              <p className="text-xl tracking-[0.02em] text-[#484848]">{item.percentage}</p>
+              <p className="desktop:text-xl laptop:text-base tracking-[0.02em] text-[#484848]">{item.location}</p>
+              <p className="desktop:text-xl laptop:text-base tracking-[0.02em] text-[#484848]">{item.percentage}</p>
             </div>
             <div className="relative max-w-full w-full h-1.5 bg-[#EFEFEF]">
               <div
@@ -102,9 +102,9 @@ function SalesByAge() {
   };
 
   return (
-    <div className="col-span-1 bg-white px-6.25 pt-6.25 pb-14 border border-[#EBEBEB] rounded-md">
+    <div className="col-span-1 bg-white desktop:px-6.25 laptop:px-4.5 desktop:pt-6.25 laptop:pt-4.5 desktop:pb-14 laptop:pb-10 border border-[#EBEBEB] rounded-md">
       <div className="flex items-center justify-between mb-6.75">
-        <h1 className="font-semibold text-[27px] text-[#484848]">Sales By Age</h1>
+        <h1 className="font-semibold desktop:text-[27px] laptop:text-sm text-[#484848]">Sales By Age</h1>
         <button className="btn">Export report</button>
       </div>
 
@@ -156,9 +156,9 @@ function SalesByGender() {
   };
 
   return (
-    <div className="col-span-1 bg-white px-6.25 pt-6.25 pb-14 border border-[#EBEBEB] rounded-md">
+    <div className="col-span-1 bg-white desktop:px-6.25 laptop:px-4.5 desktop:pt-6.25 laptop:pt-4.5 desktop:pb-14 laptop:pb-10 border border-[#EBEBEB] rounded-md">
       <div className="flex items-center justify-between mb-6.75">
-        <h1 className="font-semibold text-[27px] text-[#484848]">Sales By Gender</h1>
+        <h1 className="font-semibold desktop:text-[27px] laptop:text-sm text-[#484848]">Sales By Gender</h1>
         <button className="btn">Export report</button>
       </div>
 

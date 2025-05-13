@@ -63,15 +63,15 @@ export default function RecentOrders() {
   };
 
   return (
-    <div className="col-span-7 bg-white pt-6.25 pb-3.5 border border-[#EBEBEB] rounded-md mb-5">
-      <div className="px-6.25 mb-1.5">
-        <h1 className="font-semibold text-[27px] text-[#484848]">Recent Orders</h1>
+    <div className="col-span-7 bg-white desktop:pt-6.25 desktop:pb-3.5 laptop:pt-4.5 laptop:pb-2.5 border border-[#EBEBEB] rounded-md mb-5">
+      <div className="desktop:px-6.25 laptop:px-4.5 mb-1.5">
+        <h1 className="font-semibold desktop:text-[27px] laptop:text-xl text-[#484848]">Recent Orders</h1>
       </div>
 
       <div className="px-6.25 py-4">
         <ul className="flex items-center gap-6">
           <li
-            className={`text-lg tracking-[0.02em] cursor-pointer ${
+            className={`desktop:text-lg laptop:text-sm tracking-[0.02em] cursor-pointer ${
               filterByCategory === "All" ? "text-[#484848]" : "text-[#989898]"
             }`}
             onClick={() => setFilterByCategory("All")}
@@ -79,7 +79,7 @@ export default function RecentOrders() {
             All
           </li>
           <li
-            className={`text-lg tracking-[0.02em] cursor-pointer ${
+            className={`desktop:text-lg laptop:text-sm tracking-[0.02em] cursor-pointer ${
               filterByCategory === "Clothes" ? "text-[#484848]" : "text-[#989898]"
             }`}
             onClick={() => setFilterByCategory("Clothes")}
@@ -87,7 +87,7 @@ export default function RecentOrders() {
             Clothes
           </li>
           <li
-            className={`text-lg tracking-[0.02em] cursor-pointer ${
+            className={`desktop:text-lg laptop:text-sm tracking-[0.02em] cursor-pointer ${
               filterByCategory === "Toys" ? "text-[#484848]" : "text-[#989898]"
             }`}
             onClick={() => setFilterByCategory("Toys")}
@@ -95,7 +95,7 @@ export default function RecentOrders() {
             Toys
           </li>
           <li
-            className={`text-lg tracking-[0.02em] cursor-pointer ${
+            className={`desktop:text-lg laptop:text-sm tracking-[0.02em] cursor-pointer ${
               filterByCategory === "Electronic" ? "text-[#484848]" : "text-[#989898]"
             }`}
             onClick={() => setFilterByCategory("Electronic")}
@@ -103,7 +103,7 @@ export default function RecentOrders() {
             Electronic
           </li>
           <li
-            className={`text-lg tracking-[0.02em] cursor-pointer ${
+            className={`desktop:text-lg laptop:text-sm tracking-[0.02em] cursor-pointer ${
               filterByCategory === "Bags" ? "text-[#484848]" : "text-[#989898]"
             }`}
             onClick={() => setFilterByCategory("Bags")}
@@ -111,7 +111,7 @@ export default function RecentOrders() {
             Bags
           </li>
           <li
-            className={`text-lg tracking-[0.02em] cursor-pointer ${
+            className={`desktop:text-lg laptop:text-sm tracking-[0.02em] cursor-pointer ${
               filterByCategory === "Shoes" ? "text-[#484848]" : "text-[#989898]"
             }`}
             onClick={() => setFilterByCategory("Shoes")}
@@ -124,34 +124,47 @@ export default function RecentOrders() {
       <table className="w-full">
         <thead>
           <tr className="border-b border-[#EFEFEF] [&>th]:px-6.25 [&>th]:py-3.5">
-            <th className="font-normal tracking-[0.09em] text-start text-[#989898]">ITEM</th>
-            <th className="font-normal tracking-[0.09em] text-start text-[#989898]">QTY</th>
-            <th className="font-normal tracking-[0.09em] text-start text-[#989898]">PRICE</th>
-            <th className="font-normal tracking-[0.09em] text-start text-[#989898]">TOTAL</th>
+            <th className="font-normal tracking-[0.09em] desktop:text-base laptop:text-xs text-start text-[#989898]">
+              ITEM
+            </th>
+            <th className="font-normal tracking-[0.09em] desktop:text-base laptop:text-xs text-start text-[#989898]">
+              QTY
+            </th>
+            <th className="font-normal tracking-[0.09em] desktop:text-base laptop:text-xs text-start text-[#989898]">
+              PRICE
+            </th>
+            <th className="font-normal tracking-[0.09em] desktop:text-base laptop:text-xs text-start text-[#989898]">
+              TOTAL
+            </th>
           </tr>
         </thead>
         <tbody>
           {res.data.map((item) => (
-            <tr key={item.id} className="border-b border-[#EFEFEF] [&>td]:px-6.25 [&>td]:py-2.75">
+            <tr
+              key={item.id}
+              className="border-b border-[#EFEFEF] desktop:[&>td]:px-6.25 desktop:[&>td]:py-2.75 laptop:[&>td]:px-4.5 laptop:[&>td]:py-2"
+            >
               <td>
                 <span className="flex items-center gap-2.25">
-                  <span>
-                    <img src={item.img} alt="item1" className="w-14 h-13.75 object-cover object-center" />
+                  <span className="desktop:max-w-14 desktop:aspect-[56/55] laptop:max-w-10 laptop:aspect-[40/39]">
+                    <img src={item.img} alt="item1" className="w-full h-full object-cover object-center" />
                   </span>
                   <span className="flex flex-col">
-                    <p className="font-semibold text-lg tracking-[0.02em] text-[#484848]">{item.name}</p>
-                    <p className="tracking-[0.02em] text-[#989898]">{item.category}</p>
+                    <p className="font-semibold desktop:text-lg laptop:text-sm tracking-[0.02em] text-[#484848]">
+                      {item.name}
+                    </p>
+                    <p className="desktop:text-base laptop:text-xs tracking-[0.02em] text-[#989898]">{item.category}</p>
                   </span>
                 </span>
               </td>
               <td>
-                <p className="text-xl tracking-[0.02em] text-[#484848]">{item.qty}</p>
+                <p className="desktop:text-xl laptop:text-sm tracking-[0.02em] text-[#484848]">{item.qty}</p>
               </td>
               <td>
-                <p className="text-xl tracking-[0.02em] text-[#484848]">{item.price}</p>
+                <p className="desktop:text-xl laptop:text-sm tracking-[0.02em] text-[#484848]">{item.price}</p>
               </td>
               <td>
-                <p className="text-xl tracking-[0.02em] text-[#484848]">{item.amount}</p>
+                <p className="desktop:text-xl laptop:text-sm tracking-[0.02em] text-[#484848]">{item.amount}</p>
               </td>
             </tr>
           ))}
