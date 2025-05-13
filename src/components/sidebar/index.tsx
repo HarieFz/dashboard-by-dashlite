@@ -23,9 +23,9 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-[286px] fixed inset-0 bg-[#1A1B1C]">
+    <aside className="desktop:w-[286px] laptop:w-[200px] fixed inset-0 bg-[#1A1B1C]">
       <div className="px-[33px] h-24 flex items-center border-b border-[#494A4B]">
-        <p className="font-normal text-[42px] tracking-[0.03em] text-white">
+        <p className="font-normal desktop:text-[42px] laptop:text-3xl laptop:text tracking-[0.03em] text-white">
           Dash<span className="font-light">Lite</span>
         </p>
       </div>
@@ -36,11 +36,11 @@ export default function Sidebar() {
             {menus.map((item) => (
               <li
                 key={item.pathname}
-                className={`flex items-center gap-2 text-[21px] tracking-[0.02em] cursor-pointer transition-colors hover:text-white ${
+                className={`flex items-center gap-2 desktop:text-[21px] laptop:text-[15px] tracking-[0.02em] cursor-pointer transition-colors hover:text-white ${
                   pathname === item.pathname ? "text-white" : "text-[#BCBCBC]"
                 }`}
               >
-                <item.icon /> {item.name}
+                <item.icon className="desktop:text-xl laptop:text-[17px]" /> {item.name}
               </li>
             ))}
           </ul>

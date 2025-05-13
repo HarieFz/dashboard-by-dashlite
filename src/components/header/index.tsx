@@ -9,21 +9,21 @@ export default function Header() {
     <header className="h-24 px-9 flex items-center justify-between bg-white">
       <div>
         <button className="cursor-pointer">
-          <Backburger />
+          <Backburger className="desktop:text-[33px] laptop:text-2xl" />
         </button>
       </div>
       <div className="flex items-center gap-9">
         <button className="cursor-pointer">
-          <MessageProcessing />
+          <MessageProcessing className="desktop:text-[33px] laptop:text-2xl" />
         </button>
         <button className="cursor-pointer">
-          <Bell />
+          <Bell className="desktop:text-[33px] laptop:text-2xl" />
         </button>
         <button className="cursor-pointer">
-          <Magnify />
+          <Magnify className="desktop:text-[33px] laptop:text-2xl" />
         </button>
         <button className="cursor-pointer">
-          <Account />
+          <Account className="desktop:text-[33px] laptop:text-2xl" />
         </button>
       </div>
     </header>
