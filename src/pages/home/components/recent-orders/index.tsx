@@ -1,9 +1,6 @@
 import { useState } from "react";
 import Pagination from "../../../../components/pagination";
-import Item3 from "../../../../assets/images/item-3.png";
-import Item4 from "../../../../assets/images/item-4.png";
-import Item5 from "../../../../assets/images/item-5.png";
-import Item6 from "../../../../assets/images/item-6.png";
+import { RECENT_ORDERS } from "../../../../constants";
 
 export default function RecentOrders() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -13,54 +10,7 @@ export default function RecentOrders() {
     setCurrentPage(selected);
   };
 
-  const res = {
-    data: [
-      {
-        id: 3,
-        img: Item3,
-        name: "Solaris Power Bank",
-        category: "Furniture",
-        qty: "x4",
-        price: "$22",
-        amount: "$2,051",
-      },
-      {
-        id: 4,
-        img: Item4,
-        name: "SmartSync Earbuds",
-        category: "Bags",
-        qty: "x3",
-        price: "$22",
-        amount: "$2,051",
-      },
-      {
-        id: 5,
-        img: Item5,
-        name: "SnapShot Camera",
-        category: "Accesories",
-        qty: "x3",
-        price: "$22",
-        amount: "$2,051",
-      },
-      {
-        id: 6,
-        img: Item6,
-        name: "TechGrip Phone",
-        category: "Fashion",
-        qty: "x2",
-        price: "$22",
-        amount: "$2,051",
-      },
-    ],
-    meta: {
-      currentPage: 1,
-      perPage: 6,
-      totalItems: 90,
-      totalPages: 15,
-      nextPage: 2,
-      prevPage: null,
-    },
-  };
+  const res = RECENT_ORDERS;
 
   return (
     <div className="col-span-7 bg-white desktop:pt-6.25 desktop:pb-3.5 laptop:pt-4.5 laptop:pb-2.5 border border-[#EBEBEB] rounded-md mb-5">

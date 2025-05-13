@@ -1,36 +1,7 @@
-import Item3 from "../../../../assets/images/item-3.png";
-import Item4 from "../../../../assets/images/item-4.png";
-import Item6 from "../../../../assets/images/item-6.png";
+import { PRODUCT_DELIVERIES } from "../../../../constants";
 
 export default function ProductDelivery() {
-  const res = {
-    data: [
-      {
-        id: 3,
-        img: Item3,
-        name: "Solaris Power Bank",
-        category: "Furniture",
-        to: "Michael Brown",
-        status: "Delivered",
-      },
-      {
-        id: 4,
-        img: Item4,
-        name: "SmartSync Earbuds",
-        category: "Bags",
-        to: "Anna Marie",
-        status: "Shipping",
-      },
-      {
-        id: 6,
-        img: Item6,
-        name: "TechGrip Phone",
-        category: "Fashion",
-        to: "Kevin Bryan",
-        status: "Confirmed",
-      },
-    ],
-  };
+  const res = PRODUCT_DELIVERIES;
 
   return (
     <div className="col-span-4 bg-white desktop:pt-6.25 desktop:pb-12 laptop:pt-4.5 laptop:pb-8.5 border border-[#EBEBEB] rounded-md mb-5">
@@ -43,7 +14,7 @@ export default function ProductDelivery() {
         {res.data.map((item) => (
           <div
             key={item.id}
-            className="border-b border-[#EFEFEF] desktop:px-6.25 desktop:pt-2.75 px-4.5 laptop:py-2 pb-4"
+            className="border-b border-[#EFEFEF] desktop:px-6.25 desktop:pt-2.75 desktop:pb-3.5 laptop:px-4.5 laptop:py-2 laptop:pb-2"
           >
             <div className="flex items-center gap-2.25 mb-1.75">
               <div className="desktop:max-w-14 desktop:aspect-[56/55] laptop:max-w-10 laptop:aspect-[40/39]">

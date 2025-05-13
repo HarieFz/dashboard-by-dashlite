@@ -1,9 +1,6 @@
 import { useState } from "react";
+import { STOCK_REPORT } from "../../../../constants";
 import Pagination from "../../../../components/pagination";
-import Item1 from "../../../../assets/images/item-1.png";
-import Item2 from "../../../../assets/images/item-2.png";
-import Item3 from "../../../../assets/images/item-3.png";
-import Item4 from "../../../../assets/images/item-4.png";
 
 export default function StockReport() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -12,58 +9,7 @@ export default function StockReport() {
     setCurrentPage(selected);
   };
 
-  const res = {
-    data: [
-      {
-        id: 3,
-        img: Item3,
-        name: "Solaris Power Bank",
-        item_id: "GH77-22",
-        date_added: "22 Feb, 2023",
-        price: "$2,051",
-        status: "In Stock",
-        qty: "90 PCS",
-      },
-      {
-        id: 2,
-        img: Item2,
-        name: "Skyline Backpack",
-        item_id: "AK990-2",
-        date_added: "22 Feb, 2023",
-        price: "$2,051",
-        status: "Low Stock",
-        qty: "3 PCS",
-      },
-      {
-        id: 4,
-        img: Item4,
-        name: "SmartSync Earbuds",
-        item_id: "HP89-AA",
-        date_added: "22 Feb, 2023",
-        price: "$2,051",
-        status: "Out of stock",
-        qty: "0 PCS",
-      },
-      {
-        id: 1,
-        img: Item1,
-        name: "GlowGrip Flashlight",
-        item_id: "IOYB-A2",
-        date_added: "22 Feb, 2023",
-        price: "$2,051",
-        status: "In Stock",
-        qty: "99 PCS",
-      },
-    ],
-    meta: {
-      currentPage: 1,
-      perPage: 6,
-      totalItems: 90,
-      totalPages: 15,
-      nextPage: 2,
-      prevPage: null,
-    },
-  };
+  const res = STOCK_REPORT;
 
   return (
     <div className="col-span-8 bg-white desktop:pt-6.25 desktop:pb-3.5 laptop:pt-4.5 laptop:pb-2.5 border border-[#EBEBEB] rounded-md mb-5">

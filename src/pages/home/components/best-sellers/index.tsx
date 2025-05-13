@@ -1,18 +1,7 @@
 import { useState } from "react";
-import Item1 from "../../../../assets/images/item-1.png";
-import Item2 from "../../../../assets/images/item-2.png";
-import Item3 from "../../../../assets/images/item-3.png";
-import Item4 from "../../../../assets/images/item-4.png";
-import Item5 from "../../../../assets/images/item-5.png";
-import Item6 from "../../../../assets/images/item-6.png";
-import Seller1 from "../../../../assets/images/seller-1.png";
-import Seller2 from "../../../../assets/images/seller-2.png";
-import Seller3 from "../../../../assets/images/seller-3.png";
-import Seller4 from "../../../../assets/images/seller-4.png";
-import Seller5 from "../../../../assets/images/seller-5.png";
-import Seller6 from "../../../../assets/images/seller-6.png";
 import ChevronUp from "../../../../assets/icons/chevron-up.svg?react";
 import Pagination from "../../../../components/pagination";
+import { BEST_SELLING_ITEMS, TOP_SELLERS } from "../../../../constants";
 
 export default function BestSellers() {
   return (
@@ -30,78 +19,7 @@ function BestSellingItems() {
     setCurrentPage(selected);
   };
 
-  const res = {
-    data: [
-      {
-        id: 1,
-        img: Item1,
-        name: "GlowGrip Flashlight",
-        category: "Clothing",
-        price: "$22",
-        orders: "120",
-        stock: "201",
-        amount: "$2,051",
-      },
-      {
-        id: 2,
-        img: Item2,
-        name: "Skyline Backpack",
-        category: "Store",
-        price: "$22",
-        orders: "120",
-        stock: "No",
-        amount: "$2,051",
-      },
-      {
-        id: 3,
-        img: Item3,
-        name: "Solaris Power Bank",
-        category: "Furniture",
-        price: "$22",
-        orders: "120",
-        stock: "201",
-        amount: "$2,051",
-      },
-      {
-        id: 4,
-        img: Item4,
-        name: "SmartSync Earbuds",
-        category: "Bags",
-        price: "$22",
-        orders: "120",
-        stock: "210",
-        amount: "$2,051",
-      },
-      {
-        id: 5,
-        img: Item5,
-        name: "SnapShot Camera",
-        category: "Accesories",
-        price: "$22",
-        orders: "120",
-        stock: "No",
-        amount: "$2,051",
-      },
-      {
-        id: 6,
-        img: Item6,
-        name: "TechGrip Phone",
-        category: "Fashion",
-        price: "$22",
-        orders: "120",
-        stock: "210",
-        amount: "$2,051",
-      },
-    ],
-    meta: {
-      currentPage: 1,
-      perPage: 6,
-      totalItems: 90,
-      totalPages: 15,
-      nextPage: 2,
-      prevPage: null,
-    },
-  };
+  const res = BEST_SELLING_ITEMS;
 
   return (
     <div className="bg-white desktop:pt-6.25 laptop:pt-4.5 desktop:pb-3.5 laptop:pb-2.5 border border-[#EBEBEB] rounded-md mb-5 laptop:h-fit">
@@ -169,84 +87,7 @@ function TopSellers() {
     setCurrentPage(selected);
   };
 
-  const res = {
-    data: [
-      {
-        id: 1,
-        img: Seller1,
-        store: "GlowGrip Flashlight",
-        name: "Clothing",
-        category: "Clothing",
-        orders: "120",
-        stock: "201",
-        amount: "$2,051",
-        increase: "40%",
-      },
-      {
-        id: 2,
-        img: Seller2,
-        store: "Skyline Backpack",
-        name: "Store",
-        category: "Store",
-        orders: "120",
-        stock: "No",
-        amount: "$2,051",
-        increase: "55%",
-      },
-      {
-        id: 3,
-        img: Seller3,
-        store: "Solaris Power Bank",
-        name: "Furniture",
-        category: "Furniture",
-        orders: "120",
-        stock: "201",
-        amount: "$2,051",
-        increase: "12%",
-      },
-      {
-        id: 4,
-        img: Seller4,
-        store: "SmartSync Earbuds",
-        name: "Bags",
-        category: "Bags",
-        orders: "120",
-        stock: "210",
-        amount: "$2,051",
-        increase: "10%",
-      },
-      {
-        id: 5,
-        img: Seller5,
-        store: "SnapShot Camera",
-        name: "Accesories",
-        category: "Accesories",
-        orders: "120",
-        stock: "No",
-        amount: "$2,051",
-        increase: "11%",
-      },
-      {
-        id: 6,
-        img: Seller6,
-        store: "TechGrip Phone",
-        name: "Fashion",
-        category: "Fashion",
-        orders: "120",
-        stock: "210",
-        amount: "$2,051",
-        increase: "88%",
-      },
-    ],
-    meta: {
-      currentPage: 1,
-      perPage: 6,
-      totalItems: 90,
-      totalPages: 15,
-      nextPage: 2,
-      prevPage: null,
-    },
-  };
+  const res = TOP_SELLERS;
 
   return (
     <div className="bg-white desktop:pt-6.25 laptop:pt-4.5 desktop:pb-3.5 laptop:pb-2.5 border border-[#EBEBEB] rounded-md mb-5">
